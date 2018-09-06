@@ -11,7 +11,6 @@ namespace EmilL.AspITVisitor.DAL.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Inquiry()
         {
-            Departments = new HashSet<Department>();
             Guests = new HashSet<Guest>();
         }
 
@@ -24,8 +23,9 @@ namespace EmilL.AspITVisitor.DAL.EF
         [StringLength(100)]
         public string QuestionsString { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Department> Departments { get; set; }
+        public int AspITVisitDayId { get; set; }
+
+        public virtual AspITVisitDay AspITVisitDay { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Guest> Guests { get; set; }

@@ -8,6 +8,12 @@ namespace EmilL.AspITVisitor.DAL.EF
 
     public partial class Department
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Department()
+        {
+            AspITVisitDays = new HashSet<AspITVisitDay>();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -22,12 +28,7 @@ namespace EmilL.AspITVisitor.DAL.EF
         [StringLength(10)]
         public string ZipCode { get; set; }
 
-        public int AspITVisitDayId { get; set; }
-
-        public int InquiryId { get; set; }
-
-        public virtual AspITVisitDay AspITVisitDay { get; set; }
-
-        public virtual Inquiry Inquiry { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspITVisitDay> AspITVisitDays { get; set; }
     }
 }

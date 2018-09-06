@@ -48,12 +48,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminHandler.cs" />
+    <Compile Include="AspITVisitDayHandler.cs" />
     <Compile Include="DBHandler.cs" />
+    <Compile Include="DepartmentHandler.cs" />
+    <Compile Include="GuestHandler.cs" />
+    <Compile Include="InquiryHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionnaireHandler.cs" />
+    <Compile Include="StatisticsHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmilL.AspITVisitor.DAL\EmilL.AspITVisitor.DAL.csproj">
+      <Project>{030120c4-6432-4853-be5b-6f7a237ba2ac}</Project>
+      <Name>EmilL.AspITVisitor.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

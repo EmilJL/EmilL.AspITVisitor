@@ -37,13 +37,18 @@ namespace EmilL.AspITVisitor.DAL.EF
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<AspITVisitDay>()
-                .HasMany(e => e.Departments)
+                .HasMany(e => e.Guests)
                 .WithRequired(e => e.AspITVisitDay)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<AspITVisitDay>()
-                .HasMany(e => e.Guests)
+                .HasMany(e => e.Inquiries)
                 .WithRequired(e => e.AspITVisitDay)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Department>()
+                .HasMany(e => e.AspITVisitDays)
+                .WithRequired(e => e.Department)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<FreeAnswerQuestion>()
@@ -59,11 +64,6 @@ namespace EmilL.AspITVisitor.DAL.EF
             modelBuilder.Entity<Guest>()
                 .HasMany(e => e.MultipleChoiseAnswers)
                 .WithRequired(e => e.Guest)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Inquiry>()
-                .HasMany(e => e.Departments)
-                .WithRequired(e => e.Inquiry)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Inquiry>()
