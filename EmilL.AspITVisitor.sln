@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilL.AspITVisitor.DAL", "EmilL.AspITVisitor.DAL\EmilL.AspITVisitor.DAL.csproj", "{030120C4-6432-4853-BE5B-6F7A237BA2AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilL.AspITVisitor.Business", "EmilL.AspITVisitor.Business\EmilL.AspITVisitor.Business.csproj", "{0743A0F8-2847-40AE-8DB2-94D31DF44977}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{030120C4-6432-4853-BE5B-6F7A237BA2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{030120C4-6432-4853-BE5B-6F7A237BA2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{030120C4-6432-4853-BE5B-6F7A237BA2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0743A0F8-2847-40AE-8DB2-94D31DF44977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0743A0F8-2847-40AE-8DB2-94D31DF44977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0743A0F8-2847-40AE-8DB2-94D31DF44977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0743A0F8-2847-40AE-8DB2-94D31DF44977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
