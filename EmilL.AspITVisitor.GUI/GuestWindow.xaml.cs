@@ -21,15 +21,19 @@ namespace EmilL.AspITVisitor.GUI
     /// </summary>
     public partial class GuestWindow : Window
     {
+        private HandlerCollection handlerCollection;
+        private Questionnaire activeQ;
         public GuestWindow()
         {
             InitializeComponent();
+            handlerCollection = new HandlerCollection();
+            activeQ = handlerCollection.QHandler.GetAllQuestionnaires().FirstOrDefault(f => f.Active == true);
         }
 
         private void btnSaveGuest_Click(object sender, RoutedEventArgs e)
         {
-            QuestionnaireHandler qHandler = new QuestionnaireHandler();
-            GuestHandler guestHandler = new GuestHandler();
+            //QuestionnaireHandler qHandler = new QuestionnaireHandler();
+            //GuestHandler guestHandler = new GuestHandler();
             Guest guest = new Guest()
             {
                 Age = int.Parse(txtAge.Text),
@@ -39,10 +43,18 @@ namespace EmilL.AspITVisitor.GUI
                 WishesToBeStudent = cBoxPotentialStudent.IsChecked.Value
                 /// I am missing the date of the Inquiry being filled out. My DB is the issue.
             };
-            guestHandler.AddGuest(guest);
-            var activeQ = qHandler.GetAllQuestionnaires().FirstOrDefault(f => f.Active == true);
+            /// Måske får guest et ID her?
+            handlerCollection.GHandler.AddGuest(guest);
+            var activeQ = handlerCollection.QHandler.GetAllQuestionnaires().FirstOrDefault(f => f.Active == true);
             var fQuestions = activeQ.FreeAnswerQuestions;
-            //MessageBox.Show($"Du vil nu få præsenteret {}")
+            var mQuestions = activeQ.MultipleChoiseQuestions;
+
+            MessageBox.Show($"Du vil nu få præsenteret {fQuestions.Count} spørgsmål, der besvares med et tekstsvar. Derefter vil du få præsenteret {mQuestions.Count} multiple-choice spørgsmål.");
+            FreeQuestionsWindow fQWindow = new FreeQuestionsWindow(guest.Id, activeQ);
+            fQWindow.ShowDialog();
+            MultipleChoiceQuestionsWindow mcQWindow = new MultipleChoiceQuestionsWindow(guest.Id, activeQ);
+            mcQWindow.ShowDialog();
+            MessageBox.Show("Det lykkedes dig at svare på alle spørgsmålene. Wow.");
         }
 
         private void btnCancelSavingGuest_Click(object sender, RoutedEventArgs e)

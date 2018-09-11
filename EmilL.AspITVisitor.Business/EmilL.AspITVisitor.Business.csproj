@@ -49,12 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminHandler.cs" />
+    <Compile Include="AnswerHandler.cs" />
     <Compile Include="AspITVisitDayHandler.cs" />
     <Compile Include="DBHandler.cs" />
     <Compile Include="DepartmentHandler.cs" />
     <Compile Include="GuestHandler.cs" />
     <Compile Include="InquiryHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionHandler.cs" />
     <Compile Include="QuestionnaireHandler.cs" />
     <Compile Include="StatisticsHandler.cs" />
   </ItemGroup>

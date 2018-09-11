@@ -40,5 +40,9 @@ namespace EmilL.AspITVisitor.Business
             gst.Commune = guest.Commune;
             return SaveChangeToDB();
         }
+        public int GetIdOfLastAddedGuest()
+        {
+            return Model.Guests.Select(g => g.Id).Last();
+        }
     }
 }

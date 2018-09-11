@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilL.AspITVisitor.Business
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilL.AspITVisitor.GUI", "EmilL.AspITVisitor.GUI\EmilL.AspITVisitor.GUI.csproj", "{1D0EAD65-0F5C-4085-8ACF-1E30A3479579}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilJlAspITVisitor.FillData.ConsoleApp", "EmilJlAspITVisitor.FillData.ConsoleApp\EmilJlAspITVisitor.FillData.ConsoleApp.csproj", "{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1D0EAD65-0F5C-4085-8ACF-1E30A3479579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D0EAD65-0F5C-4085-8ACF-1E30A3479579}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D0EAD65-0F5C-4085-8ACF-1E30A3479579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

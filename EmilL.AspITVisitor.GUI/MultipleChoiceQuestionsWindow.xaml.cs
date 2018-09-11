@@ -17,55 +17,55 @@ using EmilL.AspITVisitor.DAL.EF;
 namespace EmilL.AspITVisitor.GUI
 {
     /// <summary>
-    /// Interaction logic for FreeQuestionsWindow.xaml
+    /// Interaction logic for MultipleChoiceQuestionsWindow.xaml
     /// </summary>
-    public partial class FreeQuestionsWindow : Window
+    public partial class MultipleChoiceQuestionsWindow : Window
     {
-        HandlerCollection handlerCollection;
+        private int currentGuestId;
+        private HandlerCollection handlerCollection;
         Questionnaire activeQ;
-        IList<FreeAnswerQuestion> fQuestions;
-        FreeAnswer freeAnswer;
-        int currentGuestId;
+        IList<MultipleChoiseQuestion> mcQuestions;
+        MultipleChoiseAnswer mcAnswer;
+        PossibleAnswer chosenAnswer;
         int amountOfQuestions;
         int amountOfAnsweredQuestions;
-        public FreeQuestionsWindow(int currentGuestId, Questionnaire activeQ)
+        public MultipleChoiceQuestionsWindow(int currentGuestId, Questionnaire activeQ)
         {
             InitializeComponent();
             this.activeQ = activeQ;
             this.currentGuestId = currentGuestId;
             handlerCollection = new HandlerCollection();
-
-            fQuestions = activeQ.FreeAnswerQuestions.ToList();
-            amountOfQuestions = fQuestions.Count;
+            mcQuestions = activeQ.MultipleChoiseQuestions.ToList();
             amountOfAnsweredQuestions = 0;
-            lblFreeQuestion.Content = fQuestions[amountOfAnsweredQuestions].Question;
+            amountOfQuestions = mcQuestions.Count;
+            cboMultiQuestion.ItemsSource = mcQuestions[0].PossibleAnswers;
+            lblMultiQuestion.Content = mcQuestions[0].Question;
         }
 
-        private void btnNextFreeQuestion_Click(object sender, RoutedEventArgs e)
+        private void btnNextMultiQuestion_Click(object sender, RoutedEventArgs e)
         {
-
-            freeAnswer = new FreeAnswer()
+            chosenAnswer = cboMultiQuestion.SelectedItem as PossibleAnswer;
+            mcAnswer = new MultipleChoiseAnswer()
             {
-                Answer = txtFreeQuestionAnswer.Text,
-                FreeAnswerQuestionId = fQuestions[amountOfAnsweredQuestions].Id,
+                Answer = chosenAnswer.Answer,
+                PossibleAnswerId = chosenAnswer.Id,
                 GuestId = currentGuestId,
-                Question = fQuestions[amountOfAnsweredQuestions].Question
+                Question = chosenAnswer.MultipleChoiseQuestion.Question
             };
-            handlerCollection.AHandler.AddFreeAnswer(freeAnswer);
+            handlerCollection.AHandler.AddMultiAnswer(mcAnswer);
             amountOfAnsweredQuestions++;
             if (amountOfQuestions == amountOfAnsweredQuestions)
             {
-                txtFreeQuestionAnswer.Text = "";
                 this.Close();
             }
             else
             {
-                lblFreeQuestion.Content = fQuestions[amountOfAnsweredQuestions].Question;
-                txtFreeQuestionAnswer.Text = "";
+                lblMultiQuestion.Content = mcQuestions[amountOfAnsweredQuestions].Question;
+                cboMultiQuestion.ItemsSource = mcQuestions[amountOfAnsweredQuestions].PossibleAnswers;
             }
         }
 
-        private void btnCancelFreeQuestion_Click(object sender, RoutedEventArgs e)
+        private void btnCancelMultiQuestion_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("ÅH NEJ", "Annuller oprettelse af bruger og besvarelse af spørgsmål?", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
             {

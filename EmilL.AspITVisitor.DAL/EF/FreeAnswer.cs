@@ -8,6 +8,10 @@ namespace EmilL.AspITVisitor.DAL.EF
 
     public partial class FreeAnswer
     {
+        public FreeAnswer()
+        {
+
+        }
         public int Id { get; set; }
 
         public int FreeAnswerQuestionId { get; set; }

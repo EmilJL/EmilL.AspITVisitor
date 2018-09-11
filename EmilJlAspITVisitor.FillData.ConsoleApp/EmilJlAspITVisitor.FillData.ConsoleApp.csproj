@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{030120C4-6432-4853-BE5B-6F7A237BA2AC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmilL.AspITVisitor.DAL</RootNamespace>
-    <AssemblyName>EmilL.AspITVisitor.DAL</AssemblyName>
+    <ProjectGuid>{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EmilJlAspITVisitor.FillData.ConsoleApp</RootNamespace>
+    <AssemblyName>EmilJlAspITVisitor.FillData.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,8 +42,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,24 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EF\Admin.cs" />
-    <Compile Include="EF\AspITVisitDay.cs" />
-    <Compile Include="EF\AspITVisitorModel.cs" />
-    <Compile Include="EF\Department.cs" />
-    <Compile Include="EF\FreeAnswer.cs" />
-    <Compile Include="EF\FreeAnswerQuestion.cs" />
-    <Compile Include="EF\Guest.cs" />
-    <Compile Include="EF\Inquiry.cs" />
-    <Compile Include="EF\MultipleChoiseAnswer.cs" />
-    <Compile Include="EF\MultipleChoiseQuestion.cs" />
-    <Compile Include="EF\PossibleAnswer.cs" />
-    <Compile Include="EF\Questionnaire.cs" />
-    <Compile Include="PartialEntities\Guest.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmilL.AspITVisitor.Business\EmilL.AspITVisitor.Business.csproj">
+      <Project>{0743a0f8-2847-40ae-8db2-94d31df44977}</Project>
+      <Name>EmilL.AspITVisitor.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmilL.AspITVisitor.DAL\EmilL.AspITVisitor.DAL.csproj">
+      <Project>{030120c4-6432-4853-be5b-6f7a237ba2ac}</Project>
+      <Name>EmilL.AspITVisitor.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
