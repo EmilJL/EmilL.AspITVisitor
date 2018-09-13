@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmilL.AspITVisitor.GUI"
         mc:Ignorable="d"
-        Title="MultipleChoiceQuestionsWindow" Height="178.349" Width="532.759">
+        Title="MultipleChoiceQuestionsWindow" Height="178.349" Width="532.759"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Label x:Name="lblMultiQuestion" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="60" Width="482" HorizontalContentAlignment="Center" FontSize="18" FontWeight="SemiBold"/>
         <Button x:Name="btnNextMultiQuestion" Content="Svar" HorizontalAlignment="Left" Margin="332,88,0,0" VerticalAlignment="Top" Width="64" Height="48" FontWeight="Bold" FontSize="14" BorderThickness="2" Background="#FF53FF2D" BorderBrush="Black" Click="btnNextMultiQuestion_Click"/>
         <Button x:Name="btnCancelMultiQuestion" Content="Annuller" HorizontalAlignment="Left" Margin="428,88,0,0" VerticalAlignment="Top" Width="64" Height="48" FontWeight="Bold" BorderThickness="2" Background="#FFFF3535" BorderBrush="Black" Click="btnCancelMultiQuestion_Click"/>
-        <ComboBox x:Name="cboMultiQuestion" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top" Width="259" Height="48"/>
+        <ComboBox x:Name="cboMultiQuestion" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top" Width="259" Height="48"
+                  DisplayMemberPath="Answer"/>
 
     </Grid>
 </Window>

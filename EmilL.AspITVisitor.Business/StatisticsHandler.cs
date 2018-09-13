@@ -19,7 +19,7 @@ namespace EmilL.AspITVisitor.Business
         }
         public int GetAgeRangeForGuests()
         {
-            return (Model.Guests.OrderByDescending(g => g.Age).First().Age) - (Model.Guests.OrderByDescending(g => g.Age).Last().Age);
+            return Model.Guests.Max(g => g.Age) - Model.Guests.Min(g => g.Age);
         }
         public double getAverageAgeForGuests()
         {

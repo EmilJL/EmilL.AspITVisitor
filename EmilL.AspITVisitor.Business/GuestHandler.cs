@@ -34,7 +34,6 @@ namespace EmilL.AspITVisitor.Business
             gst.AspITVisitDayId = guest.AspITVisitDayId;
             gst.FirstName = guest.FirstName;
             gst.LastName = guest.LastName;
-            gst.InquiryId = guest.InquiryId;
             gst.QuestionnaireId = guest.QuestionnaireId;
             gst.WishesToBeStudent = guest.WishesToBeStudent;
             gst.Commune = guest.Commune;

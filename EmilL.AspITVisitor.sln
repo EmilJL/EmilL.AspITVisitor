@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilL.AspITVisitor.GUI", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilJlAspITVisitor.FillData.ConsoleApp", "EmilJlAspITVisitor.FillData.ConsoleApp\EmilJlAspITVisitor.FillData.ConsoleApp.csproj", "{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilLAspITVisitor.Server", "EmilLAspITVisitor.Server\EmilLAspITVisitor.Server.csproj", "{F52AAECA-F7FC-416F-9763-F2E03FE63DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilL.AspITVisitor.ClientTest", "EmilL.AspITVisitor.ClientTest\EmilL.AspITVisitor.ClientTest.csproj", "{81572534-BD97-4EF1-AB65-B13036018537}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE67FB3F-9994-48F0-AA29-F355E4D6EEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F52AAECA-F7FC-416F-9763-F2E03FE63DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52AAECA-F7FC-416F-9763-F2E03FE63DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52AAECA-F7FC-416F-9763-F2E03FE63DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52AAECA-F7FC-416F-9763-F2E03FE63DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81572534-BD97-4EF1-AB65-B13036018537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81572534-BD97-4EF1-AB65-B13036018537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81572534-BD97-4EF1-AB65-B13036018537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81572534-BD97-4EF1-AB65-B13036018537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

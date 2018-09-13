@@ -35,7 +35,6 @@ namespace EmilL.AspITVisitor.DAL.EF
 
         public int AspITVisitDayId { get; set; }
 
-        public int InquiryId { get; set; }
 
         public int QuestionnaireId { get; set; }
 
@@ -44,7 +43,6 @@ namespace EmilL.AspITVisitor.DAL.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FreeAnswer> FreeAnswers { get; set; }
 
-        public virtual Inquiry Inquiry { get; set; }
 
         public virtual Questionnaire Questionnaire { get; set; }
 

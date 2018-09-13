@@ -32,15 +32,18 @@ namespace EmilL.AspITVisitor.GUI
 
         private void btnSaveGuest_Click(object sender, RoutedEventArgs e)
         {
-            //QuestionnaireHandler qHandler = new QuestionnaireHandler();
-            //GuestHandler guestHandler = new GuestHandler();
             Guest guest = new Guest()
             {
                 Age = int.Parse(txtAge.Text),
                 FirstName = txtFirstName.Text,
                 LastName = txtLastName.Text,
                 Commune = txtCommune.Text,
-                WishesToBeStudent = cBoxPotentialStudent.IsChecked.Value
+                WishesToBeStudent = cBoxPotentialStudent.IsChecked.Value,
+
+                /// TO DO: I need to implement a way to get the ids below.
+                AspITVisitDayId = 1,
+                QuestionnaireId = 1,
+
                 /// I am missing the date of the Inquiry being filled out. My DB is the issue.
             };
             /// Måske får guest et ID her?
@@ -51,10 +54,13 @@ namespace EmilL.AspITVisitor.GUI
 
             MessageBox.Show($"Du vil nu få præsenteret {fQuestions.Count} spørgsmål, der besvares med et tekstsvar. Derefter vil du få præsenteret {mQuestions.Count} multiple-choice spørgsmål.");
             FreeQuestionsWindow fQWindow = new FreeQuestionsWindow(guest.Id, activeQ);
+            fQWindow.Owner = this;
             fQWindow.ShowDialog();
             MultipleChoiceQuestionsWindow mcQWindow = new MultipleChoiceQuestionsWindow(guest.Id, activeQ);
+            mcQWindow.Owner = this;
             mcQWindow.ShowDialog();
             MessageBox.Show("Det lykkedes dig at svare på alle spørgsmålene. Wow.");
+            this.Close();
         }
 
         private void btnCancelSavingGuest_Click(object sender, RoutedEventArgs e)

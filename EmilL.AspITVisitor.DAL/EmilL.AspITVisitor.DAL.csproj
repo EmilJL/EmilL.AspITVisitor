@@ -57,7 +57,6 @@
     <Compile Include="EF\FreeAnswer.cs" />
     <Compile Include="EF\FreeAnswerQuestion.cs" />
     <Compile Include="EF\Guest.cs" />
-    <Compile Include="EF\Inquiry.cs" />
     <Compile Include="EF\MultipleChoiseAnswer.cs" />
     <Compile Include="EF\MultipleChoiseQuestion.cs" />
     <Compile Include="EF\PossibleAnswer.cs" />

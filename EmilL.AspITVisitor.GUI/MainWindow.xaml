@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmilL.AspITVisitor.GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="217.706" Width="436.697">
+        Title="MainWindow" Height="217.706" Width="436.697"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Button x:Name="btnGoToAdminpage" Content="Admin" HorizontalAlignment="Left" Margin="236,53,0,0" VerticalAlignment="Top" Width="150" Height="89" BorderThickness="3" FontSize="38" FontWeight="Bold" Background="#FF297BFF" BorderBrush="#FF040303"/>
         <Button x:Name="btnGoToGuestPage" Content="Gæst" HorizontalAlignment="Left" Margin="41,53,0,0" VerticalAlignment="Top" Width="150" Height="89" FontSize="36" FontWeight="Bold" BorderThickness="3" Background="#FF42ED89" BorderBrush="#FF090707" Click="btnGoToGuestPage_Click"/>

@@ -29,6 +29,7 @@ namespace EmilL.AspITVisitor.GUI
         private void btnGoToGuestPage_Click(object sender, RoutedEventArgs e)
         {
             var guestWindow = new GuestWindow();
+            guestWindow.Owner = this;
             guestWindow.ShowDialog();
         }
     }

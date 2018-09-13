@@ -18,7 +18,6 @@ namespace EmilL.AspITVisitor.DAL.EF
         public virtual DbSet<FreeAnswerQuestion> FreeAnswerQuestions { get; set; }
         public virtual DbSet<FreeAnswer> FreeAnswers { get; set; }
         public virtual DbSet<Guest> Guests { get; set; }
-        public virtual DbSet<Inquiry> Inquiries { get; set; }
         public virtual DbSet<MultipleChoiseAnswer> MultipleChoiseAnswers { get; set; }
         public virtual DbSet<MultipleChoiseQuestion> MultipleChoiseQuestions { get; set; }
         public virtual DbSet<PossibleAnswer> PossibleAnswers { get; set; }
@@ -41,11 +40,6 @@ namespace EmilL.AspITVisitor.DAL.EF
                 .WithRequired(e => e.AspITVisitDay)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<AspITVisitDay>()
-                .HasMany(e => e.Inquiries)
-                .WithRequired(e => e.AspITVisitDay)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Department>()
                 .HasMany(e => e.AspITVisitDays)
                 .WithRequired(e => e.Department)
@@ -64,11 +58,6 @@ namespace EmilL.AspITVisitor.DAL.EF
             modelBuilder.Entity<Guest>()
                 .HasMany(e => e.MultipleChoiseAnswers)
                 .WithRequired(e => e.Guest)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Inquiry>()
-                .HasMany(e => e.Guests)
-                .WithRequired(e => e.Inquiry)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MultipleChoiseQuestion>()

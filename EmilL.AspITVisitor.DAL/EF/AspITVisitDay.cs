@@ -12,7 +12,6 @@ namespace EmilL.AspITVisitor.DAL.EF
         public AspITVisitDay()
         {
             Guests = new HashSet<Guest>();
-            Inquiries = new HashSet<Inquiry>();
         }
 
         public int Id { get; set; }
@@ -30,8 +29,5 @@ namespace EmilL.AspITVisitor.DAL.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Guest> Guests { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Inquiry> Inquiries { get; set; }
     }
 }

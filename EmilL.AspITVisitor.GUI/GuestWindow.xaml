@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmilL.AspITVisitor.GUI"
         mc:Ignorable="d"
-        Title="GuestWindow" Height="411.6" Width="471.2">
+        Title="GuestWindow" Height="411.6" Width="471.2"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
